@@ -1,0 +1,12 @@
+expires: 259200 # 3days
+
+clean:
+  tags:
+    - "Read"
+
+feeds:
+  - url: "https://stackoverflow.blog/feed/"
+  - url: "https://news.ycombinator.com/rss"
+    expires: 86400
+    tags:
+      - "News"
