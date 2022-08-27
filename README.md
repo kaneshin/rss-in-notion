@@ -2,6 +2,8 @@
 
 🔖 RSS meets Notion written in Go
 
+![](screenshot.png)
+
 ## Setup
 
 Please fork the repository if you want to feed pages by your favorite urls. Then setup configuration.
