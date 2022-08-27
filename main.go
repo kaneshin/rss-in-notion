@@ -23,7 +23,7 @@ type Feed struct {
 type Config struct {
 	Expires int `yaml:"expires"`
 	Clean   struct {
-		Tags []string `yaml:"tags"`
+		Status []string `yaml:"status"`
 	} `yaml:"clean"`
 	Feeds []Feed `yaml:"feeds"`
 }
@@ -170,7 +170,7 @@ func runPull(ctx context.Context, feed Feed) error {
 	return nil
 }
 
-func runCleanByTags(ctx context.Context, feed Feed, status []string) error {
+func runCleanByStatus(ctx context.Context, feed Feed, status []string) error {
 	fp := gofeed.NewParser()
 	fd, err := fp.ParseURLWithContext(feed.URL, ctx)
 	if err != nil {
@@ -267,7 +267,7 @@ func main() {
 		}
 	case "clean":
 		for _, f := range c.Feeds {
-			err = runCleanByTags(ctx, f, c.Clean.Tags)
+			err = runCleanByStatus(ctx, f, c.Clean.Status)
 			if err != nil {
 				log.Println(err)
 			}

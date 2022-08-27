@@ -1,7 +1,7 @@
 expires: 259200 # 3days
 
 clean:
-  tags:
+  status:
     - "Read"
 
 feeds:
